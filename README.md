@@ -1,16 +1,5 @@
 # goit-nodejs-hw-01-CLI
 
-$ node index.js --help
-Usage: index [options]
-
-Options:
--a, --action <type> choose action: list, get -i, add -n -e -p, remove -i
--i, --id <type> user id
--n, --name <type> user name
--e, --email <type> user email
--p, --phone <type> user phone
--h, --help display help for command
-
 ## Отримуємо і виводимо весь список контактів у вигляді таблиці (console.table)
 
 node index.js --action="list"
