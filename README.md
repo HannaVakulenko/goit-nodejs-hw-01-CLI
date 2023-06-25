@@ -23,3 +23,7 @@ https://monosnap.com/file/znG47H6mQFsxyU2ZPOYBdhuiS7IQDk
 node index.js --action="remove" --id qdggE76Jtbfd9eWJHrssH
 
 https://monosnap.com/file/o0VQWXSbMjIXwCB515uFW2XLlN0tgO
+
+## Оновлюємо контакт та виводимо в консоль об'єкт оновленого контакту
+
+node index.js --action="update" --id b1baab4f-ea12-476a-b148-c6c210897ba0 --name Kivi --email kivi@gmail.com --phone 322-22-44

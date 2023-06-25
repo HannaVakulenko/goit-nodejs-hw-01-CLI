@@ -49,6 +49,17 @@ async function addContact(name, email, phone) {
   return newContact;
 }
 
+async function updateContactById(id, name, email, phone) {
+  const contacts = await readContacts();
+  const index = contacts.findIndex((item) => item.id === id);
+  if (index === -1) {
+    return null;
+  }
+  contacts[index] = { id, name, email, phone }; //знайдений по індексу в масиві об'єкт, який оновлюємо
+  await writeContacts(contacts);
+  return contacts[index]; // повертає оновлений об'єкт
+}
+
 // Повертає об'єкт видаленого контакту. Повертає null, якщо контакт з таким id не знайдений.
 async function removeContact(contactId) {
   const contacts = await readContacts();
@@ -59,11 +70,11 @@ async function removeContact(contactId) {
     return null;
   }
 
-  const [res] = contacts.splice(index, 1);
+  const [res] = contacts.splice(index, 1); // const [res] - деструктурізація елементу масиву
 
   await writeContacts(contacts);
 
-  return res;
+  return res; // повертає вирізаний об'єкт
 }
 
 // експорт створених функцій через module.exports
@@ -72,4 +83,5 @@ module.exports = {
   getContactById,
   removeContact,
   addContact,
+  updateContactById,
 };
